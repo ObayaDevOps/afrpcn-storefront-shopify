@@ -67,12 +67,12 @@ export default function Homepage() {
       <div className="w-full">
         <Image 
           data={{
-            url: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1713447956/koboko_1713447955666.png",
+            url: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719236519/WhatsApp_Image_2024-06-24_at_16.37.47_spjob2.jpg",
             altText: "AFRPCN Store Banner",
             width: 1920,
             height: 1080
           }}
-          className="w-full h-[400px] object-cover"
+          className="w-full h-[90vh] object-cover object-top"
           sizes="100vw"
         />
       </div>
