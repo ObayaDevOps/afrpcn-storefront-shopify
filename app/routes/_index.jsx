@@ -64,6 +64,18 @@ export default function Homepage() {
   const data = useLoaderData();
   return (
     <div className="home">
+      <div className="w-full">
+        <Image 
+          data={{
+            url: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1713447956/koboko_1713447955666.png",
+            altText: "AFRPCN Store Banner",
+            width: 1920,
+            height: 1080
+          }}
+          className="w-full h-[400px] object-cover"
+          sizes="100vw"
+        />
+      </div>
       <FeaturedCollection collection={data.featuredCollection} />
       <RecommendedProducts products={data.recommendedProducts} />
     </div>

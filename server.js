@@ -35,6 +35,22 @@ export default {
 
       const response = await handleRequest(request);
 
+      // Add both Cloudinary and Shopify domains to the Content-Security-Policy header
+      const cspHeader = [
+        "default-src 'self'",
+        "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+        "style-src 'self' 'unsafe-inline'",
+        // Added Shopify domains along with Cloudinary
+        "img-src 'self' data: blob: https://res.cloudinary.com *.shopify.com *.shopifycdn.com cdn.shopify.com shop.app",
+        "font-src 'self'",
+        "connect-src 'self'",
+        "media-src 'self'",
+        "object-src 'none'",
+        "frame-src 'self'",
+      ].join('; ');
+
+      response.headers.set('Content-Security-Policy', cspHeader);
+
       if (appLoadContext.session.isPending) {
         response.headers.set(
           'Set-Cookie',
